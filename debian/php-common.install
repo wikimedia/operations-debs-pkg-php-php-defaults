@@ -1,0 +1,5 @@
+phpenmod /usr/sbin/
+phpquery /usr/sbin/
+sessionclean /usr/lib/php/
+php-helper /usr/lib/php/
+php-maintscript-helper /usr/lib/php/

@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# debian/rules for PHP defaults
+# Copyright (C) 2011 Ondřej Surý
+# Published under the Expat license
+#
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export DH_OPTIONS
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	:
+
+override_dh_auto_make:
+	:
+
+override_dh_auto_install:
+	:
+
+override_dh_installcron:
+	dh_installcron -pphp-common --name=php

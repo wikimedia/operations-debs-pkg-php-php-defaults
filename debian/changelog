@@ -1,0 +1,5 @@
+php-defaults (1) unstable; urgency=low
+
+  * Initial php-defaults package
+
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 22 Jan 2014 16:47:30 +0100
