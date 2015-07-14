@@ -172,47 +172,25 @@ double_action() {
 while getopts ds:m:SMqv:V opt; do
     case $opt in
 	v)
-	    new_action=check_version
-	    if [ -n "$action" ]; then
-		case "$action" in
-		    check_mod|check_sapi) new_action= ;; # check_mod and check_sapi wins
-		    *) double_action $action $new_action 
-		esac
-	    else
-		action=$new_action
-	    fi
 	    version="$OPTARG"
 	    ;;
 	V)
-	    new_action=list_version
-	    if [ -n "$action" ]; then double_action $action $new_action; fi
+	    [ -n "$action" ] && double_action $action list_version;
+	    action=list_version
 	    ;;
 	s)
-	    new_action=check_sapi
-	    case "$action" in
-		check_mod) new_action= ;; # check_mod wins
-		check_version) ;;
-		"") ;;
-		*) double_action $action $new_action
-	    esac
 	    sapi="$OPTARG"
 	    ;;
 	S)
-	    new_action="list_sapi"
-	    if [ -n "$action" ]; then double_action $action $new_action; fi
+	    [ -n "$action" ] && double_action $action list_sapi
+	    action="list_sapi"
 	    ;;
 	m)
-	    new_action=check_mod
-	    case "$action" in
-		"") ;;
-		check_version|check_sapi) ;;
-		*) double_action $action $new_action ;;
-	    esac
 	    mod="$OPTARG"
 	    ;;
 	M)
-	    new_action="list_mod"
-	    if [ -n "$action" ]; then double_action $action $new_action; fi
+	    [ -n "$action" ] && double_action $action list_mod
+	    action="list_mod"
 	    ;;
 	d)
 	    verbose=yes
@@ -222,12 +200,19 @@ while getopts ds:m:SMqv:V opt; do
 	    ;;
 	\?) usage "Unknown parameter specified";;
     esac
-    [ -n "$new_action" ] && action=$new_action
 done
 shift $(expr $OPTIND - 1)
 
 if [ -z "$action" ]; then
-    usage "You need to specify at least one action."
+    if [ -n "$mod" ]; then
+	action=check_mod
+    elif [ -n "$sapi" ]; then
+	action=check_sapi
+    elif [ -n "$version" ]; then
+	action=check_version
+    else
+        usage "You need to specify at least one action."
+    fi
 fi
 
 ret=0
@@ -254,7 +239,7 @@ case "$action" in
 	;;
     list_version) list_version || ret=$?;;
     list_mod) list_mod $verbose || ret=$?;;
-    list_sapi) list_sapi || ret=$?;;
+    list_sapi) list_sapi $version || ret=$?;;
     *) usage "Unknown action $action";;
 esac
 
