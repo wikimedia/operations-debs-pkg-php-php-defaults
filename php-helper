@@ -132,7 +132,7 @@ get_priority() {
     local source_ini="/etc/php/${version}/mods-available/${modname}.ini"
 
     module_ret=0
-    module_exists $modname || module_ret=$?
+    module_exists $version $modname || module_ret=$?
 
     if [ "$module_ret" -eq 0 ]; then
 	priority=$(sed -ne "s/^; ?priority=\([0-9]\+\)$/\\1/p" $source_ini)

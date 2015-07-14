@@ -36,6 +36,7 @@
 set -ue
 
 SCRIPT_NAME=${0##*/}
+QUIET=no
 
 . /usr/lib/php/php-helper
 
@@ -235,6 +236,9 @@ while getopts ds:m:SMqv:V opt; do
 	M)
 	    [ -n "$action" ] && double_action $action list_mod
 	    action="list_mod"
+	    ;;
+	q)
+	    QUIET=yes
 	    ;;
 	d)
 	    verbose=yes
