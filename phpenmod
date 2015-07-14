@@ -67,8 +67,8 @@ resolve_sapis() {
 }
 
 enmods() {
-    local _versions="$1"
-    local _sapis="$2"
+    local versions="$1"
+    local sapis="$2"
     local mods="$3"
     local register="$4"
     local versions
@@ -79,19 +79,19 @@ enmods() {
     
     for mod in $mods; do
 	for version in $(resolve_versions "$versions"); do
-	    for sapi in $(resolve_sapis $version "$sapis"); do
+	    for sapi in $(resolve_sapis "$version" "$sapis"); do
 		enmod_ret=0
-		enmod $version $sapi $mod || enmod_ret=$?
+		enmod "$version" "$sapi" "$mod" || enmod_ret=$?
 		case $enmod_ret in
 		    0)
 			NEED_RESTART=yes
-			record_state enabled $version $sapi $mod
+			record_state enabled "$version" "$sapi" "$mod"
 			;;
 		esac
 	    done
 	done
 	if [ "$register" = "yes" ]; then
-	    mod_registry register $mod
+	    mod_registry register "$mod"
 	fi
     done
 }
@@ -108,23 +108,23 @@ dismods() {
 
     for mod in $mods; do
 	for version in $(resolve_versions "$versions"); do
-	    for sapi in $(resolve_sapis $version "$sapis"); do
+	    for sapi in $(resolve_sapis "$version" "$sapis"); do
 		local dismod_ret=0
-		dismod $version $sapi $mod $purge || dismod_ret=$?
+		dismod "$version" "$sapi" "$mod" "$purge" || dismod_ret=$?
 		case $dismod_ret in
 		    0)
 			NEED_RESTART=yes
-			record_state disabled $version $sapi $mod
+			record_state disabled "$version" "$sapi" "$mod"
 			;;
 		esac
 	    done
 	done
 	if [ "$purge" = "yes" ]; then
-	    remove_state enabled $sapi $mod
-	    remove_state disabled $sapi $mod
-	    mod_registry unregister $mod
+	    remove_state enabled "$sapi" "$mod"
+	    remove_state disabled "$sapi" "$mod"
+	    mod_registry unregister "$mod"
 	elif [ "$register" = "yes" ]; then
-	    mod_registry unregister $mod
+	    mod_registry unregister "$mod"
 	fi
     done
 }
@@ -134,19 +134,19 @@ enmod() {
     local sapi=$2
     local modname=$3
 
-    if ! module_exists $version $modname; then
+    if ! module_exists "$version" "$modname"; then
 	warning "Module $modname ini file doesn't exist under /etc/php/${version}/mods-available"
 	return 1
     fi
 
-    local priority=$(get_priority $version $sapi $modname)
-    local live_link=$(get_live_link $version $sapi $modname $priority)
-    local live_link_content=$(get_live_link_content $version $sapi $modname $priority)
+    local priority=$(get_priority "$version" "$sapi" "$modname")
+    local live_link=$(get_live_link "$version" "$sapi" "$modname" "$priority")
+    local live_link_content=$(get_live_link_content "$version" "$sapi" "$modname" "$priority")
 
     local module_state=0
-    phpquery -q -v $version -s $sapi -m $modname || module_state=$?
+    phpquery -q -v "$version" -s "$sapi" -m "$modname" || module_state=$?
 
-    case $module_state in
+    case "$module_state" in
 	# module enabled, but re-enable the conf.d link just in case
 	0)
 	    ;;
@@ -172,7 +172,7 @@ enmod() {
 	    ;;
 	# fail if we get any different result
 	*)
-	    warning "Unable to get module state, run phpquery -v $version -s $sapi -m $modname manually"
+	    warning "Unable to get module state, run phpquery -v ${version} -s ${sapi} -m ${modname} manually"
 	    warning "and fix the module state."
 	    return 1
     esac
@@ -195,19 +195,19 @@ dismod() {
     local modname=$3
     local purge=$4
 
-    if ! module_exists $version $modname; then
+    if ! module_exists "$version" "$modname"; then
 	if [ "$purge" = "no" ]; then
-	    warning "Module $modname ini file doesn't exist under /etc/php/${version}/mods-available"
+	    warning "Module ${modname} ini file doesn't exist under /etc/php/${version}/mods-available"
 	    return 1
 	fi
     fi
 
-    local priority=$(get_priority $version $sapi $modname)
-    local live_link=$(get_live_link $version $sapi $modname $priority)
-    local live_link_content=$(get_live_link_content $version $sapi $modname $priority)
+    local priority=$(get_priority "$version" "$sapi" "$modname")
+    local live_link=$(get_live_link "$version" "$sapi" "$modname" "$priority")
+    local live_link_content=$(get_live_link_content "$version" "$sapi" "$modname" "$priority")
 
     local module_state=0
-    phpquery -q -v $version -s $sapi -m $modname || module_state=$?
+    phpquery -q -v "$version" -s "$sapi" -m "$modname" || module_state=$?
 
     case $module_state in
 	# module enabled
@@ -217,13 +217,13 @@ dismod() {
 	1|32|33)
 	    ;;
 	34)
-	    warning "Not disabling module $modname for $sapi SAPI.  The configuration was"
+	    warning "Not disabling module ${modname} for ${sapi} SAPI.  The configuration was"
 	    warning "modified by local administrator."
 	    return 1
 	    ;;
 	# fail if we get any different result
 	*)
-	    warning "Unable to get module state, run phpquery -v $version -s $sapi -m $modname manually"
+	    warning "Unable to get module state, run phpquery -v ${version} -s ${sapi} -m ${modname} manually"
 	    warning "and fix the module state."
 	    return 1
     esac
