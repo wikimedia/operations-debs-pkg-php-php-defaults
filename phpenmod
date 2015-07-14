@@ -120,8 +120,8 @@ dismods() {
 	    done
 	done
 	if [ "$purge" = "yes" ]; then
-	    remove_state enabled "$sapi" "$mod"
-	    remove_state disabled "$sapi" "$mod"
+	    remove_state enabled "$version" "$sapi" "$mod"
+	    remove_state disabled "$version" "$sapi" "$mod"
 	    mod_registry unregister "$mod"
 	elif [ "$register" = "yes" ]; then
 	    mod_registry unregister "$mod"
