@@ -36,7 +36,6 @@
 set -ue
 
 SCRIPT_NAME=${0##*/}
-QUIET=no
 
 . /usr/lib/php/php-helper
 
@@ -98,14 +97,24 @@ check_mod() {
 }
 
 list_mod() {
-    local verbose=$1
+    local _version=$1
+    local _sapi=$2
+    local verbose=$3
     local registry_dir="$(get_registry_dir)"
 
     if [ -d "$registry_dir" ]; then
 	for mod in $(list_parts "$registry_dir"); do
-	    versions=$(list_version)
+	    if [ "$_version" = "ALL" ]; then
+		versions=$(list_version)
+	    else
+		versions=$_version
+	    fi
 	    for version in $versions; do
-		sapis=$(list_sapi $version)
+		if [ "$_sapi" = "ALL" ]; then
+		    sapis=$(list_sapi $version)
+		else
+		    sapis="$_sapi"
+		fi
 		if [ "$verbose" = "yes" ]; then
 		    for sapi in $sapis; do
 			check_mod $version $sapi $mod
@@ -160,7 +169,42 @@ check_sapi() {
     return 1
 }
 
-QUIET=no
+action() {
+    local action=$1
+    local version=$2
+    local sapi=$3
+    local mod=$4
+    local verbose=$5
+
+    ret=0
+    case "$action" in
+	check_mod)
+	    [ -z "$version" -o -z "$sapi" ] && usage "You need to specify version (-v) and sapi (-s)"
+	    check_version $version || usage "Invalid PHP version ($version) specified"
+	    check_sapi $version $sapi || usage "Invalid SAPI ($sapi) specified"
+	    check_mod $version $sapi $mod || ret=$?
+	    ;;
+	check_sapi)
+	    [ -z "$version" ] && usage "You need to specify version (-v)"
+	    check_version $version || usage "Invalid PHP version ($version) specified"
+	    check_sapi $version $sapi || ret=$?
+	    if [ "$ret" -eq 0 ]; then
+		output "$sapi"
+	    fi
+	    ;;
+	check_version)
+	    check_version $version || ret=$?
+	    if [ "$ret" -eq 0 ]; then
+		output "$sapi"
+	    fi
+	    ;;
+	list_version) list_version || ret=$?;;
+	list_mod) list_mod $version $sapi $verbose || ret=$?;;
+	list_sapi) list_sapi $version || ret=$?;;
+	*) usage "Unknown action $action";;
+    esac
+}
+
 verbose=no
 action=
 sapi=
@@ -195,9 +239,6 @@ while getopts ds:m:SMqv:V opt; do
 	d)
 	    verbose=yes
 	    ;;
-	q)
-	    QUIET=yes
-	    ;;
 	\?) usage "Unknown parameter specified";;
     esac
 done
@@ -215,32 +256,5 @@ if [ -z "$action" ]; then
     fi
 fi
 
-ret=0
-case "$action" in
-    check_mod)
-	[ -z "$version" -o -z "$sapi" ] && usage "You need to specify version (-v) and sapi (-s)"
-	check_version $version || usage "Invalid PHP version ($version) specified"
-	check_sapi $sapi || usage "Invalid SAPI ($sapi) specified"
-	check_mod $version $sapi $mod || ret=$?
-	;;
-    check_sapi)
-	[ -z "$version" ] && usage "You need to specify version (-v)"
-	check_version $version || usage "Invalid PHP version ($version) specified"
-	check_sapi $version $sapi || ret=$?
-	if [ "$ret" -eq 0 ]; then
-	    output "$sapi"
-	fi
-	;;
-    check_version)
-	check_version $version || ret=$?
-	if [ "$ret" -eq 0 ]; then
-	    output "$sapi"
-	fi
-	;;
-    list_version) list_version || ret=$?;;
-    list_mod) list_mod $verbose || ret=$?;;
-    list_sapi) list_sapi $version || ret=$?;;
-    *) usage "Unknown action $action";;
-esac
-
-exit $ret
+action "$action" "$version" "$sapi" "$mod" "$verbose"
+exit $?
