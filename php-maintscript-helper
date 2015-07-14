@@ -201,7 +201,6 @@ php_invoke()
 	     ;;
 	 *)
 	     # FIXME - check if the version is supported
-	     :
 	     ;;
     esac
 
@@ -212,7 +211,7 @@ php_invoke()
 	    apache2|apache2filter|fpm|cli|cgi|embed)
 	    ;;
 	    ALL)
-		sapi_list=$(phpquery -S -v $version)
+		sapi_list=$(phpquery -S -v $VERSION)
 		case "$CMD" in
 		    enmod|dismod)
 			php$CMD -q -m -r "$MOD" || return 1
