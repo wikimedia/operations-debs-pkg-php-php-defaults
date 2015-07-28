@@ -135,7 +135,7 @@ enmod() {
     local modname=$3
 
     if ! module_exists "$version" "$modname"; then
-	warning "Module $modname ini file doesn't exist under /etc/php/${version}/mods-available"
+	warning "Module $modname ini file doesn't exist under /etc/php/mods-available"
 	return 1
     fi
 
@@ -197,7 +197,7 @@ dismod() {
 
     if ! module_exists "$version" "$modname"; then
 	if [ "$purge" = "no" ]; then
-	    warning "Module ${modname} ini file doesn't exist under /etc/php/${version}/mods-available"
+	    warning "Module ${modname} ini file doesn't exist under /etc/php/mods-available"
 	    return 1
 	fi
     fi
