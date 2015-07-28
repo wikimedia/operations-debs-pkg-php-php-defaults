@@ -1,11 +1,6 @@
-php-defaults (2) unstable; urgency=medium
-
-  * fix a glitch in php-maintscript-helper
-
- -- Ondřej Surý <ondrej@debian.org>  Tue, 14 Jul 2015 13:17:27 +0200
-
-php-defaults (1) unstable; urgency=low
+php-defaults (3) unstable; urgency=medium
 
   * Initial php-defaults package
+  * Move the mods-available directory directly under /etc/php
 
- -- Ondřej Surý <ondrej@debian.org>  Wed, 22 Jan 2014 16:47:30 +0100
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 28 Jul 2015 15:00:58 +0200
