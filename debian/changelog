@@ -1,3 +1,10 @@
+php-defaults (4) unstable; urgency=medium
+
+  * Add a mandatory /etc/php/mods-available directory
+  * Purge /var/lib/php on php-common removal
+
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 29 Jul 2015 11:27:18 +0200
+
 php-defaults (3) unstable; urgency=medium
 
   * Initial php-defaults package
