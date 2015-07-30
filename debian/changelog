@@ -1,3 +1,10 @@
+php-defaults (7) unstable; urgency=medium
+
+  * Autogenerate debian/control with default PHP version from debian/rules
+  * Move the session dir to php-common package
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 30 Jul 2015 11:22:30 +0200
+
 php-defaults (6) unstable; urgency=medium
 
   * Fix the location of live link
