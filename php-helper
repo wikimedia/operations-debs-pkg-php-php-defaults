@@ -157,7 +157,7 @@ get_live_link_content() {
     local sapi=$2
     local modname=$3
     local priority=$4
-    echo "../../mods-available/${modname}.ini"
+    echo "/etc/php/mods-available/${modname}.ini"
 }
 
 module_exists() {
