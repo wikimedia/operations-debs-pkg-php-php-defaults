@@ -1,3 +1,9 @@
+php-defaults (8) unstable; urgency=medium
+
+  * Add missing phpdbg SAPI to php-maintscript-helper script
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 03 Aug 2015 13:28:49 +0200
+
 php-defaults (7) unstable; urgency=medium
 
   * Autogenerate debian/control with default PHP version from debian/rules
