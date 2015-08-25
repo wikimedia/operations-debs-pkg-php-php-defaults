@@ -1,3 +1,9 @@
+php-defaults (9) experimental; urgency=medium
+
+  * Update copyright on everything to match the Expat license
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 25 Aug 2015 15:37:07 +0200
+
 php-defaults (8) unstable; urgency=medium
 
   * Add missing phpdbg SAPI to php-maintscript-helper script
