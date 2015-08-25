@@ -1,5 +1,7 @@
 #!/bin/sh
+#
 # php-maintscript-helper - PHP helper function for maintainer scripts
+#
 # Copyright (C) 2012 Arno Töll <debian@toell.net>
 #               2013 Ondřej Surý <ondrej@sury.org>
 #
