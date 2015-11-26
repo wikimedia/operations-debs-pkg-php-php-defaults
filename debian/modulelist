@@ -1,12 +1,9 @@
 curl CURL
 gd GD
 imap IMAP
-interbase Interbase
 intl Internationalisation
-json JSON
 ldap LDAP
 mysql MySQL
-opcache ZendOpcache
 pgsql PostgreSQL
 pspell pspell
 recode recode
