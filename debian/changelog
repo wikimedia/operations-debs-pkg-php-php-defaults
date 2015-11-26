@@ -1,3 +1,11 @@
+php-defaults (14) experimental; urgency=medium
+
+  * Fix missing field in d/copyright
+  * Update d/control
+  * Don't generate php-json, php-interbase and php-opcache (yet)
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 26 Nov 2015 15:20:27 +0100
+
 php-defaults (13) experimental; urgency=medium
 
   * Add meta packages for all modules
