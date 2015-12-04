@@ -1,3 +1,14 @@
+php-defaults (15) unstable; urgency=medium
+
+  [ Jan Wagner ]
+  * Adding 'PHP_INI_SCAN_DIR=/etc/php/${version}/${conf_dir}/conf.d/' to
+    session cleanup script when calling php
+
+  [ Ondřej Surý ]
+  * Upload to unstable
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 04 Dec 2015 12:09:32 +0100
+
 php-defaults (14) experimental; urgency=medium
 
   * Fix missing field in d/copyright
