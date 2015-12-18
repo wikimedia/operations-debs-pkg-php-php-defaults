@@ -1,3 +1,11 @@
+php-defaults (17) unstable; urgency=medium
+
+  * Add PHP_SUPPORTED_VERSIONS to d/rules
+  * Only one version (7.0) is supported under normal conditions
+  * Update modulelist to up-to-date list of internal modules
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 18 Dec 2015 09:33:43 +0100
+
 php-defaults (16) unstable; urgency=medium
 
   * Replace @PHP_VERSION@ in debian/control generated from
