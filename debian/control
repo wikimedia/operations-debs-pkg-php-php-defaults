@@ -53,8 +53,8 @@ Description: server-side, HTML-embedded scripting language (default)
 
 Package: php-all-dev
 Architecture: all
-Depends: php7.0-dev,
-         ${misc:Depends}
+Depends: ${misc:Depends},
+         @PHP_DEV_PACKAGES@
 Description: package depending on all supported PHP development packages
  The package currently depends on php7.0-dev.
  .
@@ -121,7 +121,7 @@ Description: CURL module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
 
 Package: php-dev
 Architecture: all
@@ -165,7 +165,7 @@ Description: GD module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
 
 Package: php-imap
 Architecture: all
@@ -180,22 +180,7 @@ Description: IMAP module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
-
-Package: php-interbase
-Architecture: all
-Depends: php-common,
-         php7.0-interbase,
-         ${misc:Depends}
-Description: Interbase module for PHP [default]
- This package provides a Interbase module for PHP.
- .
- PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
- open source general-purpose scripting language that is especially suited
- for web development and can be embedded into HTML.
- .
- This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
 
 Package: php-intl
 Architecture: all
@@ -210,22 +195,7 @@ Description: Internationalisation module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
-
-Package: php-json
-Architecture: all
-Depends: php-common,
-         php7.0-json,
-         ${misc:Depends}
-Description: JSON module for PHP [default]
- This package provides a JSON module for PHP.
- .
- PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
- open source general-purpose scripting language that is especially suited
- for web development and can be embedded into HTML.
- .
- This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
 
 Package: php-ldap
 Architecture: all
@@ -240,7 +210,7 @@ Description: LDAP module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
 
 Package: php-mysql
 Architecture: all
@@ -255,22 +225,7 @@ Description: MySQL module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
-
-Package: php-opcache
-Architecture: all
-Depends: php-common,
-         php7.0-opcache,
-         ${misc:Depends}
-Description: ZendOpcache module for PHP [default]
- This package provides a ZendOpcache module for PHP.
- .
- PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
- open source general-purpose scripting language that is especially suited
- for web development and can be embedded into HTML.
- .
- This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
 
 Package: php-pgsql
 Architecture: all
@@ -285,7 +240,7 @@ Description: PostgreSQL module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
 
 Package: php-phpdbg
 Architecture: all
@@ -315,7 +270,7 @@ Description: pspell module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
 
 Package: php-recode
 Architecture: all
@@ -330,7 +285,7 @@ Description: recode module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
 
 Package: php-snmp
 Architecture: all
@@ -345,7 +300,7 @@ Description: SNMP module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
 
 Package: php-sqlite3
 Architecture: all
@@ -360,7 +315,7 @@ Description: SQLite3 module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
 
 Package: php-sybase
 Architecture: all
@@ -375,7 +330,7 @@ Description: Sybase module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
 
 Package: php-tidy
 Architecture: all
@@ -390,4 +345,4 @@ Description: tidy module for PHP [default]
  for web development and can be embedded into HTML.
  .
  This package is a dependency package, which depends on Debian's default
- PHP version (currently @PHP_VERSION@).
+ PHP version (currently 7.0).
