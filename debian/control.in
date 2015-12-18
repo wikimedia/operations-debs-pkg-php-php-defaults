@@ -21,7 +21,7 @@ Description: server-side, HTML-embedded scripting language (Apache 2 module) (de
  open source general-purpose scripting language that is especially suited
  for web development and can be embedded into HTML.
  .
- This package is a dependency package, which depends on Debian's default
+ This package is a dependency package, which depends on latest stable
  PHP version (currently @PHP_VERSION@).
 
 Package: libphp-embed
@@ -36,7 +36,7 @@ Description: HTML-embedded scripting language (Embedded SAPI library) (default)
  open source general-purpose scripting language that is especially suited
  for web development and can be embedded into HTML.
  .
- This package is a dependency package, which depends on Debian's default
+ This package is a dependency package, which depends on latest stable
  PHP version (currently @PHP_VERSION@).
 
 Package: php
@@ -48,7 +48,7 @@ Description: server-side, HTML-embedded scripting language (default)
  open source general-purpose scripting language that is especially suited
  for web development and can be embedded into HTML.
  .
- This package is a dependency package, which depends on Debian's default
+ This package is a dependency package, which depends on latest stable
  PHP version (currently @PHP_VERSION@).
 
 Package: php-all-dev
@@ -76,7 +76,7 @@ Description: server-side, HTML-embedded scripting language (CGI binary) (default
  open source general-purpose scripting language that is especially suited
  for web development and can be embedded into HTML.
  .
- This package is a dependency package, which depends on Debian's default
+ This package is a dependency package, which depends on latest stable
  PHP version (currently @PHP_VERSION@).
 
 Package: php-cli
@@ -91,7 +91,7 @@ Description: command-line interpreter for the PHP scripting language (default)
  open source general-purpose scripting language that is especially suited
  for web development and can be embedded into HTML.
  .
- This package is a dependency package, which depends on Debian's default
+ This package is a dependency package, which depends on latest stable
  PHP version (currently @PHP_VERSION@).
 
 Package: php-common
@@ -143,7 +143,7 @@ Description: Files for PHP module development (default)
  open source general-purpose scripting language that is especially suited
  for web development and can be embedded into HTML.
  .
- This package is a dependency package, which depends on Debian's default
+ This package is a dependency package, which depends on latest stable
  PHP version (currently @PHP_VERSION@).
 
 Package: php-fpm
@@ -158,7 +158,7 @@ Description: server-side, HTML-embedded scripting language (FPM-CGI binary) (def
  open source general-purpose scripting language that is especially suited
  for web development and can be embedded into HTML.
  .
- This package is a dependency package, which depends on Debian's default
+ This package is a dependency package, which depends on latest stable
  PHP version (currently @PHP_VERSION@).
 
 Package: php-phpdbg
@@ -173,5 +173,5 @@ Description: server-side, HTML-embedded scripting language (PHPDBG binary) (defa
  open source general-purpose scripting language that is especially suited
  for web development and can be embedded into HTML.
  .
- This package is a dependency package, which depends on Debian's default
+ This package is a dependency package, which depends on latest stable
  PHP version (currently @PHP_VERSION@).

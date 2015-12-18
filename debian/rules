@@ -9,8 +9,8 @@
 
 include /usr/share/dpkg/default.mk
 
-PHP_DEFAULT_VERSION    := 7.0
-PHP_SUPPORTED_VERSIONS := 7.0
+PHP_DEFAULT_VERSION    := 7.1
+PHP_SUPPORTED_VERSIONS := 7.1 7.0 5.6
 
 , := ,
 PHP_DEV_PACKAGES       := $(addprefix php,$(addsuffix -dev$(,),$(PHP_SUPPORTED_VERSIONS))), $(addprefix php,$(addsuffix -json$(,),$(PHP_SUPPORTED_VERSIONS)))
