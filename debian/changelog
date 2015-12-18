@@ -1,3 +1,9 @@
+php-defaults (28+coinst) experimental; urgency=medium
+
+  * Update supported versions to include 5.6 and 7.0
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 18 Feb 2016 16:39:48 +0100
+
 php-defaults (28) unstable; urgency=medium
 
   * php-all-dev needs to pull phpX.Y-json packages in addition to phpX.Y-dev
@@ -165,3 +171,4 @@ php-defaults (3) unstable; urgency=medium
   * Move the mods-available directory directly under /etc/php
 
  -- Ondřej Surý <ondrej@debian.org>  Tue, 28 Jul 2015 15:00:58 +0200
+<
