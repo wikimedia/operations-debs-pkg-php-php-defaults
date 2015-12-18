@@ -53,7 +53,8 @@ Description: server-side, HTML-embedded scripting language (default)
 
 Package: php-all-dev
 Architecture: all
-Depends: php7.0-dev,
+Depends: php5.6-dev,
+         php7.0-dev,
          ${misc:Depends}
 Description: package depending on all supported PHP development packages
  The package currently depends on php7.0-dev.

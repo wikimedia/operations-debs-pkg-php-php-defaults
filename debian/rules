@@ -8,7 +8,7 @@
 #export DH_VERBOSE=1
 
 PHP_DEFAULT_VERSION    := 7.0
-PHP_SUPPORTED_VERSIONS := 7.0
+PHP_SUPPORTED_VERSIONS := 5.6 7.0
 
 , := ,
 PHP_DEV_PACKAGES       := $(addprefix php,$(addsuffix -dev$(,),$(PHP_SUPPORTED_VERSIONS)))

@@ -1,3 +1,9 @@
+php-defaults (27+coinst) experimental; urgency=medium
+
+  * Update supported versions to include 5.6 and 7.0
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 02 Feb 2016 11:21:26 +0100
+
 php-defaults (27) unstable; urgency=medium
 
   * Add php-fpm default package
@@ -159,3 +165,4 @@ php-defaults (3) unstable; urgency=medium
   * Move the mods-available directory directly under /etc/php
 
  -- Ondřej Surý <ondrej@debian.org>  Tue, 28 Jul 2015 15:00:58 +0200
+<
