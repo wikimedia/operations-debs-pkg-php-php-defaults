@@ -1,3 +1,11 @@
+php-defaults (18) unstable; urgency=medium
+
+  * Fix a -dev package generation (missing coma)
+  * Fix permissions on /var/lib/php/sessions from php-common package
+    (Closes: #807164)
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 21 Dec 2015 11:03:38 +0100
+
 php-defaults (17) unstable; urgency=medium
 
   * Add PHP_SUPPORTED_VERSIONS to d/rules
