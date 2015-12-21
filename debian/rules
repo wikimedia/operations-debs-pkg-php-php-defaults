@@ -50,8 +50,7 @@ debian/control: debian/control.in debian/rules debian/changelog
 	done;
 	-wrap-and-sort -ab
 
-override_dh_install:
-	mkdir -p debian/$(PHP_COMMON)/var/lib/php/sessions/
-	chmod 01733 debian/$(PHP_COMMON)/var/lib/php/sessions/
-
-	dh_install
+override_dh_fixperms-indep:
+	chmod 01733 debian/php-common/var/lib/php/sessions
+	dh_fixperms -i  -pphp-common -X/var/lib/php/sessions
+	dh_fixperms -i --remaining-packages
