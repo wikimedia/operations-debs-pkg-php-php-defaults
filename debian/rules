@@ -54,3 +54,5 @@ override_dh_fixperms-indep:
 	chmod 01733 debian/php-common/var/lib/php/sessions
 	dh_fixperms -i  -pphp-common -X/var/lib/php/sessions
 	dh_fixperms -i --remaining-packages
+
+.PHONY: debian/control
