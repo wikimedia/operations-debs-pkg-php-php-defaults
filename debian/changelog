@@ -1,3 +1,10 @@
+php-defaults (19) unstable; urgency=medium
+
+  * Add default php-dbg package to complete the set of the dependency
+    packages
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 29 Dec 2015 14:22:09 +0100
+
 php-defaults (18) unstable; urgency=medium
 
   * Fix a -dev package generation (missing coma)
