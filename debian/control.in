@@ -122,13 +122,27 @@ Description: HTML-embedded scripting language (Embedded SAPI library) (default)
  This package is a dependency package, which depends on Debian's default
  PHP version (currently @PHP_VERSION@).
 
-Package: php-fpm
+Package: php-dev
 Architecture: all
-Depends: php@PHP_VERSION@-fpm,
+Depends: php@PHP_VERSION@-dev,
          ${misc:Depends}
-Description: server-side, HTML-embedded scripting language (FPM-CGI binary) (default)
- This package provides the Fast Process Manager interpreter that runs
- as a daemon and receives Fast/CGI requests.
+Description: HTML-embedded scripting language (Embedded SAPI library) (default)
+ Headers and other PHP needed for compiling additional modules.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently @PHP_VERSION@).
+
+Package: php-dbg
+Architecture: all
+Depends: php@PHP_VERSION@-dbg,
+         ${misc:Depends}
+Description: Debug symbols for PHP (default)
+ This package provides the debug symbols for PHP needed for properly
+ debugging errors in PHP with gdb.
  .
  PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
  open source general-purpose scripting language that is especially suited
