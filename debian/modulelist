@@ -1,6 +1,8 @@
 bz2 bzip2
 curl CURL
+enchan Enchant
 gd GD
+gmp GMP
 imap IMAP
 interbase Interbase
 intl Internationalisation
@@ -18,3 +20,4 @@ sqlite3 SQLite3
 sybase Sybase
 tidy tidy
 xmlrpc XMLRPC-EPI
+xsl XSL
