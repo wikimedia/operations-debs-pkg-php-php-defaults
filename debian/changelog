@@ -1,3 +1,11 @@
+php-defaults (20) unstable; urgency=medium
+
+  * Fix typo in enchant modules name
+  * Add d/control to .PHONY rules, so we can always regenerate it
+  * Fix double php-dev package in d/control.in
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 29 Dec 2015 16:19:25 +0100
+
 php-defaults (19) unstable; urgency=medium
 
   * Add default php-dbg package to complete the set of the dependency
