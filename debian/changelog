@@ -1,3 +1,9 @@
+php-defaults (21) unstable; urgency=medium
+
+  * Remove automatic (de-)registration of modules on '-s ALL'
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 29 Dec 2015 18:06:26 +0100
+
 php-defaults (20) unstable; urgency=medium
 
   * Fix typo in enchant modules name
