@@ -1,3 +1,9 @@
+php-defaults (22) unstable; urgency=medium
+
+  * Fix php-dev description (Closes: #809725)
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 04 Jan 2016 11:45:29 +0100
+
 php-defaults (21) unstable; urgency=medium
 
   * Remove automatic (de-)registration of modules on '-s ALL'
