@@ -127,7 +127,7 @@ Package: php-dev
 Architecture: all
 Depends: php@PHP_VERSION@-dev,
          ${misc:Depends}
-Description: HTML-embedded scripting language (Embedded SAPI library) (default)
+Description: Files for PHP module development (default)
  Headers and other PHP needed for compiling additional modules.
  .
  PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
