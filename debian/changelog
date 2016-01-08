@@ -1,3 +1,10 @@
+php-defaults (23) unstable; urgency=medium
+
+  * Add CLI to list of supported SAPIS in sessionclean script
+  * Fix versioned binaries' names that sessionclean script checks
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 08 Jan 2016 10:08:32 +0100
+
 php-defaults (22) unstable; urgency=medium
 
   * Fix php-dev description (Closes: #809725)
