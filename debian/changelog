@@ -1,3 +1,9 @@
+php-defaults (24) unstable; urgency=medium
+
+  * Make -v ALL -s ALL default if -v or -s was not specified
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 26 Jan 2016 12:37:20 +0100
+
 php-defaults (23) unstable; urgency=medium
 
   * Add CLI to list of supported SAPIS in sessionclean script
