@@ -1,3 +1,9 @@
+php-defaults (25) unstable; urgency=medium
+
+  * Supress dpkg-statoverride --list output (Closes: #812983)
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 02 Feb 2016 11:17:14 +0100
+
 php-defaults (24) unstable; urgency=medium
 
   * Make -v ALL -s ALL default if -v or -s was not specified
