@@ -1,3 +1,10 @@
+php-defaults (26) unstable; urgency=medium
+
+  [ Tugdual Saunier ]
+  * Fix priorities handling in php-helper
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 04 Feb 2016 14:16:34 +0100
+
 php-defaults (25) unstable; urgency=medium
 
   * Supress dpkg-statoverride --list output (Closes: #812983)
