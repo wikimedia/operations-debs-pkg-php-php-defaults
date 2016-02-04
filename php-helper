@@ -123,7 +123,7 @@ get_priority() {
     module_exists "$version" "$modname" || module_ret=$?
 
     if [ "$module_ret" -eq 0 ]; then
-	priority=$(sed -ne "s/^; ?priority=\([0-9]\+\)$/\\1/p" "$source_ini")
+	priority=$(sed -ne "s/^; \?priority=\([0-9]\+\)$/\\1/p" "$source_ini")
 	[ -z "$priority" ] && priority=20
 	echo "$priority"
 	return 0
