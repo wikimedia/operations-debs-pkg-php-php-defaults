@@ -1,3 +1,9 @@
+php-defaults (27) unstable; urgency=medium
+
+  * Add php-fpm default package
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 15 Feb 2016 11:40:38 +0100
+
 php-defaults (26) unstable; urgency=medium
 
   [ Tugdual Saunier ]
