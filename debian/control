@@ -182,6 +182,21 @@ Description: Enchant module for PHP [default]
  This package is a dependency package, which depends on Debian's default
  PHP version (currently 7.0).
 
+Package: php-fpm
+Architecture: all
+Depends: php7.0-fpm,
+         ${misc:Depends}
+Description: server-side, HTML-embedded scripting language (FPM-CGI binary) (default)
+ This package provides the Fast Process Manager interpreter that runs
+ as a daemon and receives Fast/CGI requests.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 7.0).
+
 Package: php-gd
 Architecture: all
 Depends: php-common,
