@@ -1,3 +1,10 @@
+php-defaults (31) unstable; urgency=medium
+
+  * Generate package version numbers from PHP supported versions and
+    changelog version
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 23 Feb 2016 20:01:09 +0100
+
 php-defaults (30) unstable; urgency=medium
 
   * Regenerate d/control
