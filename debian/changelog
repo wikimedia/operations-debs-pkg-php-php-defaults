@@ -2,8 +2,10 @@ php-defaults (31) unstable; urgency=medium
 
   * Generate package version numbers from PHP supported versions and
     changelog version
+  * Remove php-dbg package
+  * Bump standards version to 3.9.7 (no change)
 
- -- Ondřej Surý <ondrej@debian.org>  Tue, 23 Feb 2016 20:01:09 +0100
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 23 Feb 2016 20:25:43 +0100
 
 php-defaults (30) unstable; urgency=medium
 
