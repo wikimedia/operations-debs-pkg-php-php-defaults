@@ -17,7 +17,7 @@ PHP_DEV_PACKAGES       := $(addprefix php,$(addsuffix -dev$(,),$(PHP_SUPPORTED_V
 
 reverse = $(shell printf "%s\n" $(strip $1) | sort -rn | tr -s '\n' '+')
 
-PHP_DEB_VERSION := 0:$(call reverse,$(PHP_SUPPORTED_VERSIONS))$(DEB_VERSION)
+PHP_DEB_VERSION := 1:$(call reverse,$(PHP_SUPPORTED_VERSIONS))$(DEB_VERSION)
 
 SED=sed
 
