@@ -1,3 +1,9 @@
+php-defaults (32) unstable; urgency=medium
+
+  * Bump epoch to 1, so the new version number is higher than the old one
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 23 Feb 2016 20:47:04 +0100
+
 php-defaults (31) unstable; urgency=medium
 
   * Generate package version numbers from PHP supported versions and
