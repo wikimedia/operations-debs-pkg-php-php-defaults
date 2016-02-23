@@ -15,7 +15,9 @@ PHP_SUPPORTED_VERSIONS := 7.0
 , := ,
 PHP_DEV_PACKAGES       := $(addprefix php,$(addsuffix -dev$(,),$(PHP_SUPPORTED_VERSIONS))), $(addprefix php,$(addsuffix -json$(,),$(PHP_SUPPORTED_VERSIONS)))
 
-PHP_DEB_VERSION := 0:$(PHP_SUPPORTED_VERSIONS: =+)+$(DEB_VERSION)
+reverse = $(shell printf "%s\n" $(strip $1) | sort -rn | tr -s '\n' '+')
+
+PHP_DEB_VERSION := 0:$(call reverse,$(PHP_SUPPORTED_VERSIONS))$(DEB_VERSION)
 
 SED=sed
 
