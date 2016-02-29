@@ -117,7 +117,7 @@ get_priority() {
     local sapi=$2
     local modname=$3
 
-    local source_ini="/etc/php/mods-available/${modname}.ini"
+    local source_ini="/etc/php/${version}/mods-available/${modname}.ini"
 
     module_ret=0
     module_exists "$version" "$modname" || module_ret=$?
@@ -145,13 +145,13 @@ get_live_link_content() {
     local sapi=$2
     local modname=$3
     local priority=$4
-    echo "/etc/php/mods-available/${modname}.ini"
+    echo "/etc/php/${version}/mods-available/${modname}.ini"
 }
 
 module_exists() {
     local version=$1
     local modname=$2
-    local source_ini="/etc/php/mods-available/${modname}.ini"
+    local source_ini="/etc/php/${version}/mods-available/${modname}.ini"
 
     if [ ! -r "${source_ini}" ]; then
 	return 1

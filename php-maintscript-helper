@@ -257,12 +257,12 @@ php_invoke()
 		    if [ "$phpquery_ret" -eq 0 ] ; then
 			if [ "$PHP_MAINTSCRIPT_NAME" = 'postrm' ] && [ "$PHP_MAINTSCRIPT_METHOD" = "purge" ] ; then
 			    php$CMD -p -f -v "$VERSION" -s "$SAPI" -q "$MOD" || return 1
-			    php_msg "debug" "php_invoke $PHP_MAINTSCRIPT_NAME: Purging module $MOD for $SAPI SAPI"
+			    php_msg "debug" "php_invoke $PHP_MAINTSCRIPT_NAME: Purging module $MOD for PHP $VERSION $SAPI SAPI"
 			    PHP_NEED_ACTION=1
 			elif [ "$PHP_MAINTSCRIPT_NAME" = 'postrm' ] || [ "$PHP_MAINTSCRIPT_NAME" = 'prerm' ] ; then
 			    if [ "$PHP_MAINTSCRIPT_METHOD" = "remove" ] ; then
 				php$CMD -m -f -v "$VERSION" -s "$SAPI" -q "$MOD" || return 1
-				php_msg "info" "php_invoke $PHP_MAINTSCRIPT_NAME: Disable module $MOD for $SAPI SAPI"
+				php_msg "info" "php_invoke $PHP_MAINTSCRIPT_NAME: Disabled module $MOD for PHP $VERSION $SAPI SAPI"
 				PHP_NEED_ACTION=1
 			    fi
 			else

@@ -123,7 +123,7 @@ enmod() {
     local modname=$3
 
     if ! module_exists "$version" "$modname"; then
-	warning "Module $modname ini file doesn't exist under /etc/php/mods-available"
+	warning "Module $modname ini file doesn't exist under /etc/php/${version}/mods-available"
 	return 1
     fi
 
@@ -185,7 +185,7 @@ dismod() {
 
     if ! module_exists "$version" "$modname"; then
 	if [ "$purge" = "no" ]; then
-	    warning "Module ${modname} ini file doesn't exist under /etc/php/mods-available"
+	    warning "Module ${modname} ini file doesn't exist under /etc/php/${version}/mods-available"
 	    return 1
 	fi
     fi
@@ -216,7 +216,7 @@ dismod() {
 	    return 1
     esac
 
-    if [ -d "/etc/php/$version/$sapi/conf.d" ]; then
+    if [ -d "/etc/php/${version}/${sapi}/conf.d" ]; then
 	if [ -h "$live_link" ]; then
 	    rm -f "$live_link"
 	fi

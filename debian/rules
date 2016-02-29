@@ -15,6 +15,8 @@ PHP_SUPPORTED_VERSIONS := 7.0
 , := ,
 PHP_DEV_PACKAGES       := $(addprefix php,$(addsuffix -dev$(,),$(PHP_SUPPORTED_VERSIONS))), $(addprefix php,$(addsuffix -json$(,),$(PHP_SUPPORTED_VERSIONS)))
 
+PHP_COMMON_DIRS        := $(addprefix /etc/php/,$(addsuffix /mods-available,$(PHP_SUPPORTED_VERSIONS)))
+
 reverse = $(shell printf "%s\n" $(strip $1) | sort -rn | tr -s '\n' '+')
 
 PHP_DEB_VERSION := 1:$(call reverse,$(PHP_SUPPORTED_VERSIONS))$(DEB_VERSION)
@@ -56,9 +58,13 @@ debian/control: debian/control.in debian/rules debian/changelog
 	done;
 	-wrap-and-sort -ab
 
+override_dh_installdirs-indep:
+	dh_installdirs -i -pphp-common $(PHP_COMMON_DIRS)
+	dh_installdirs -i --remaining-packages
+
 override_dh_fixperms-indep:
 	chmod 01733 debian/php-common/var/lib/php/sessions
-	dh_fixperms -i  -pphp-common -X/var/lib/php/sessions
+	dh_fixperms -i -pphp-common -X/var/lib/php/sessions
 	dh_fixperms -i --remaining-packages
 
 override_dh_gencontrol:
