@@ -19,7 +19,8 @@ PHP_COMMON_DIRS        := $(addprefix /etc/php/,$(addsuffix /mods-available,$(PH
 
 reverse = $(shell printf "%s\n" $(strip $1) | sort -rn | tr -s '\n' '+')
 
-PHP_DEB_VERSION := 1:$(call reverse,$(PHP_SUPPORTED_VERSIONS))$(DEB_VERSION)
+PHP_COMMON_DEB_VERSION := 1:$(DEB_VERSION)
+PHP_DEB_VERSION        := 1:$(call reverse,$(PHP_SUPPORTED_VERSIONS))$(DEB_VERSION)
 
 SED=sed
 
@@ -58,16 +59,17 @@ debian/control: debian/control.in debian/rules debian/changelog
 	done;
 	-wrap-and-sort -ab
 
-override_dh_installdirs-indep:
+override_dh_installdirs:
 	dh_installdirs -i -pphp-common $(PHP_COMMON_DIRS)
 	dh_installdirs -i --remaining-packages
 
-override_dh_fixperms-indep:
+override_dh_fixperms:
 	chmod 01733 debian/php-common/var/lib/php/sessions
 	dh_fixperms -i -pphp-common -X/var/lib/php/sessions
 	dh_fixperms -i --remaining-packages
 
 override_dh_gencontrol:
-	dh_gencontrol -- -v$(PHP_DEB_VERSION)
+	dh_gencontrol -pphp-common -- -v$(PHP_COMMON_DEB_VERSION)
+	dh_gencontrol --remaining-packages -- -v$(PHP_DEB_VERSION)
 
 .PHONY: debian/control
