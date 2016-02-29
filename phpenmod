@@ -77,10 +77,10 @@ enmods() {
 			;;
 		esac
 	    done
+	    if [ "$register" = "yes" ]; then
+		mod_registry register "$version" "$mod"
+	    fi
 	done
-	if [ "$register" = "yes" ]; then
-	    mod_registry register "$mod"
-	fi
     done
 }
 
@@ -110,9 +110,9 @@ dismods() {
 	if [ "$purge" = "yes" ]; then
 	    remove_state enabled "$version" "$sapi" "$mod"
 	    remove_state disabled "$version" "$sapi" "$mod"
-	    mod_registry unregister "$mod"
+	    mod_registry unregister "$version" "$mod"
 	elif [ "$register" = "yes" ]; then
-	    mod_registry unregister "$mod"
+	    mod_registry unregister "$version" "$mod"
 	fi
     done
 }

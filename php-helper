@@ -40,8 +40,9 @@ remove_state() {
 
 mod_registry() {
     local action=$1
-    local modname=$2
-    local registry_dir="$(get_registry_dir)"
+    local version=$2
+    local modname=$3
+    local registry_dir="$(get_registry_dir "$version")"
     local registry_file="${registry_dir}/${modname}"
 
     case $action in
@@ -167,7 +168,8 @@ get_state_dir() {
 }
 
 get_registry_dir() {
-    echo "/var/lib/php/modules/registry"
+    local version=$1
+    echo "/var/lib/php/modules/${version}/registry"
     return 0
 }
 

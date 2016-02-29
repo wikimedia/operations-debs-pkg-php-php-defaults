@@ -8,6 +8,11 @@ if [ "$1" = "configure" ]; then
     fi
 fi
 
+# Remove old registry directory
+if [ -d "/var/lib/php/modules/registry" ]; then
+    rm -r /var/lib/php/modules/registry;
+fi
+
 #DEBHELPER#
 
 exit 0

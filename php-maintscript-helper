@@ -216,7 +216,7 @@ php_invoke()
 		sapi_list=$(phpquery -S -v $VERSION)
 		case "$CMD" in
 		    enmod|dismod)
-			php$CMD -q -m -r "$MOD" || return 1
+			php$CMD -q -v "$VERSION" -m -r "$MOD" || return 1
 			;;
 		    *)
 			return 1
