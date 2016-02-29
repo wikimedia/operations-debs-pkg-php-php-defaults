@@ -1,3 +1,12 @@
+php-defaults (33) unstable; urgency=medium
+
+  * Create independent mods-available directory for each PHP version
+  * php-common needs to have different version then the rest of the
+    packages, so it's just $(DEB_EPOCH):$(DEB_VERSION) and it doesn't
+    include supported PHP versions
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 29 Feb 2016 09:45:39 +0100
+
 php-defaults (32) unstable; urgency=medium
 
   * Bump epoch to 1, so the new version number is higher than the old one
