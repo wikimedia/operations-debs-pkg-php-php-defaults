@@ -17,10 +17,8 @@ PHP_DEV_PACKAGES       := $(addprefix php,$(addsuffix -dev$(,),$(PHP_SUPPORTED_V
 
 PHP_COMMON_DIRS        := $(addprefix /etc/php/,$(addsuffix /mods-available,$(PHP_SUPPORTED_VERSIONS)))
 
-reverse = $(shell printf "%s\n" $(strip $1) | sort -rn | tr -s '\n' '+')
-
 PHP_COMMON_DEB_VERSION := 1:$(DEB_VERSION)
-PHP_DEB_VERSION        := 1:$(call reverse,$(PHP_SUPPORTED_VERSIONS))$(DEB_VERSION)
+PHP_DEB_VERSION        := 1:$(PHP_DEFAULT_VERSION)+$(DEB_VERSION)
 
 SED=sed
 
@@ -69,7 +67,8 @@ override_dh_fixperms:
 	dh_fixperms -i --remaining-packages
 
 override_dh_gencontrol:
-	dh_gencontrol -pphp-common -- -v$(PHP_COMMON_DEB_VERSION)
+	dh_gencontrol -pphp-common  -- -v$(PHP_COMMON_DEB_VERSION)
+	dh_gencontrol -pphp-all-dev -- -v$(PHP_COMMON_DEB_VERSION)
 	dh_gencontrol --remaining-packages -- -v$(PHP_DEB_VERSION)
 
 .PHONY: debian/control
