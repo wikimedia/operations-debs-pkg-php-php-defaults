@@ -1,3 +1,12 @@
+php-defaults (36) unstable; urgency=medium
+
+  * Stop overloading variables in php-maintscript-helper, it was causing
+    the next PHP version on the list to enable just the last SAPI on the
+    previous list.  This was affecting only co-installable PHP versions
+    installed side-by-side.
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 03 Mar 2016 16:15:20 +0100
+
 php-defaults (35) unstable; urgency=medium
 
   * Simplify the package versions to use only SUPPORTED_VERSION for common
