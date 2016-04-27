@@ -2,8 +2,10 @@ php-defaults (37) unstable; urgency=medium
 
   * Instead of conflicting with old php5 packages, use dpkg-divert to move
     /usr/bin/phar away
+  * We need to divert to /usr/bin/phar.php5 to prevent clash with updated
+    php5 packages
 
- -- Ondřej Surý <ondrej@debian.org>  Wed, 27 Apr 2016 20:32:54 +0200
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 27 Apr 2016 21:12:16 +0200
 
 php-defaults (36) unstable; urgency=medium
 
