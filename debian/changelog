@@ -1,3 +1,10 @@
+php-defaults (37) unstable; urgency=medium
+
+  * Instead of conflicting with old php5 packages, use dpkg-divert to move
+    /usr/bin/phar away
+
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 27 Apr 2016 20:32:54 +0200
+
 php-defaults (36) unstable; urgency=medium
 
   * Stop overloading variables in php-maintscript-helper, it was causing
