@@ -4,10 +4,10 @@ set -e
 
 if [ "$1" = install ] || [ "$1" = upgrade ] ; then
     dpkg-divert --add --package php-common --rename \
-    		--divert /usr/bin/phar5 \
+    		--divert /usr/bin/phar.php5 \
 		/usr/bin/phar
     dpkg-divert --add --package php-common --rename \
-		--divert /usr/share/man/man1/phar5.1.gz \
+		--divert /usr/share/man/man1/phar.php5.1.gz \
 		/usr/share/man/man1/phar.1.gz
 fi
 
