@@ -26,8 +26,8 @@ SAPIS="apache2:apache2\napache2filter:apache2\ncgi:php@VERSION@\nfpm:php@VERSION
 # Iterate through all web SAPIs
 (
 for version in $(/usr/sbin/phpquery -V); do
+    printf "$SAPIS" | { \
     proc_names=""
-    printf "$SAPIS" | \
     while IFS=: read -r conf_dir proc_name; do
 	if [ -e /etc/php/${version}/${conf_dir}/php.ini ]; then
 	    # Get all session variables once so we don't need to start PHP to get each config option
@@ -41,7 +41,7 @@ for version in $(/usr/sbin/phpquery -V); do
 		printf "%s:%s\n" "$save_path" "$gc_maxlifetime"
 	    fi
 	fi
-    done
+    done }
 done
 # first find all open session files and touch them (hope it's not massive amount of files)
 for pid in $(pidof $proc_names); do
