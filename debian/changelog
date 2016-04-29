@@ -1,13 +1,15 @@
 php-defaults (38) unstable; urgency=medium
 
   * Fix the bug where sessionclean doesn't touch session files
+  * Replace the while loop with for loop to prevent launching subshell in
+    the sessionclean script
   * Reverse sort the output of -V, so the default version is more likely
     to be at the top (this needs to be fixed when f.e. we have 7.1 as
     supported, but 7.0 as default, if that ever happens)
   * Add lintian override for phar dpkg-divert
   * Add couple of more lintian-overrides for things that are correct
 
- -- Ondřej Surý <ondrej@debian.org>  Fri, 29 Apr 2016 10:26:33 +0200
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 29 Apr 2016 10:50:18 +0200
 
 php-defaults (37) unstable; urgency=medium
 
