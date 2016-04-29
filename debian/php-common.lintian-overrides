@@ -1,0 +1,3 @@
+# We are diverting files from old php5-cli to allow coinstalling with new PHP packaging
+php-common: diversion-for-unknown-file usr/bin/phar preinst:8
+php-common: diversion-for-unknown-file usr/share/man/man1/phar.1.gz preinst:11
