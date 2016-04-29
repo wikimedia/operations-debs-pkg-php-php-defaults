@@ -124,7 +124,7 @@ list_version() {
 	local version=
 	for version in $(list_parts_regex "$version_dir" '.*[0-9]\.[0-9]'); do
 	    echo $version;
-	done
+	done | sort -rn
     fi
 }
 
