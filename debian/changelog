@@ -1,3 +1,10 @@
+php-defaults (39) unstable; urgency=medium
+
+  * Change Vcs-Browser links to https cgit
+  * Bump standards to 3.9.8 (no change)
+
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 04 May 2016 15:26:40 +0200
+
 php-defaults (38) unstable; urgency=medium
 
   * Fix the bug where sessionclean doesn't touch session files
