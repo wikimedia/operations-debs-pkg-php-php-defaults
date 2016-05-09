@@ -24,6 +24,13 @@ SED=sed
 
 export DH_OPTIONS
 
+DIVERT=sed -e '/\#DIVERT\#/ d'
+ifeq (Ubuntu,$(DEB_VENDOR))
+  ifeq ($(DEB_DISTRIBUTION),wily)
+    DIVERT=sed -e "/\#DIVERT\#/ r debian/php-common.$${script}.divert"
+  endif
+endif
+
 %:
 	dh $@
 
@@ -65,6 +72,14 @@ override_dh_fixperms:
 	chmod 01733 debian/php-common/var/lib/php/sessions
 	dh_fixperms -i -pphp-common -X/var/lib/php/sessions
 	dh_fixperms -i --remaining-packages
+
+override_dh_installdeb:
+	for script in preinst postrm; do \
+	  $(DIVERT) \
+	    < debian/php-common.$${script}.in \
+	    > debian/php-common.$${script}; \
+	done
+	dh_installdeb -i
 
 override_dh_gencontrol:
 	dh_gencontrol -pphp-common  -- -v$(PHP_COMMON_DEB_VERSION)

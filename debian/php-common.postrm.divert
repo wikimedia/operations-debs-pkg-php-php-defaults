@@ -1,14 +1,3 @@
-#!/bin/sh
-# postrm script for php-common
-#
-# see: dh_installdeb(1)
-
-set -e
-
-if [ "$1" = "purge" ]; then
-    rm -rf /var/lib/php
-fi
-
 if [ "$1" = remove ] ; then
     dpkg-divert --remove --package php-common --rename \
 		--divert /usr/bin/phar.php5 \
@@ -17,7 +6,3 @@ if [ "$1" = remove ] ; then
 		--divert /usr/share/man/man1/phar.php5.1.gz \
 		/usr/share/man/man1/phar.1.gz
 fi
-
-#DEBHELPER#
-
-exit 0
