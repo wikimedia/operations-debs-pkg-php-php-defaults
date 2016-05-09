@@ -1,3 +1,9 @@
+php-defaults (40) unstable; urgency=medium
+
+  * Only use dpkg-divert on Ubuntu 15.10 (Closes: #823515)
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 09 May 2016 11:55:13 +0200
+
 php-defaults (39) unstable; urgency=medium
 
   * Change Vcs-Browser links to https cgit
