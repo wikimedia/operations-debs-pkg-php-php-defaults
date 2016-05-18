@@ -1,3 +1,9 @@
+php-defaults (41) unstable; urgency=medium
+
+  * Match only the first ; priority=[0-9] line in the ini file
+
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 18 May 2016 10:18:28 +0200
+
 php-defaults (40) unstable; urgency=medium
 
   * Only use dpkg-divert on Ubuntu 15.10 (Closes: #823515)
