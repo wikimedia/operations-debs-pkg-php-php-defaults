@@ -1,3 +1,9 @@
+php-defaults (42) unstable; urgency=medium
+
+  * Silence errors from find caused by time race.
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 16 Jun 2016 09:01:09 +0200
+
 php-defaults (41) unstable; urgency=medium
 
   * Match only the first ; priority=[0-9] line in the ini file
