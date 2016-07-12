@@ -1,3 +1,9 @@
+php-defaults (43) unstable; urgency=medium
+
+  * Move -ignore_session_path to be the first argument
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 12 Jul 2016 10:43:00 +0200
+
 php-defaults (42) unstable; urgency=medium
 
   * Silence errors from find caused by time race.
