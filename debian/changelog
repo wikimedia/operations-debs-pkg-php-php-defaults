@@ -1,3 +1,9 @@
+php-defaults (44) unstable; urgency=medium
+
+  * Don't lose status from check_mod() (Closes: #834189)
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 15 Aug 2016 11:14:54 +0200
+
 php-defaults (43) unstable; urgency=medium
 
   * Move -ignore_session_path to be the first argument
