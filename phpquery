@@ -191,8 +191,9 @@ action() {
 	list_version) list_version || ret=$?;;
 	list_mod) list_mod "$version" "$sapi" "$verbose" || ret=$?;;
 	list_sapi) list_sapi "$version" || ret=$?;;
-	*) usage "Unknown action $action";;
+	*) usage "Unknown action $action"; ret=3;;
     esac
+    return $ret
 }
 
 verbose=no
