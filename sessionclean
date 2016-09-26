@@ -21,7 +21,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-SAPIS="apache2:apache2 apache2filter:apache2 cgi:php@VERSION@ fpm:php@VERSION@-fpm cli:php@VERSION@"
+SAPIS="apache2:apache2 apache2filter:apache2 cgi:php@VERSION@ fpm:php-fpm@VERSION@ cli:php@VERSION@"
 
 # Iterate through all web SAPIs
 (
