@@ -1,3 +1,11 @@
+php-defaults (45) unstable; urgency=medium
+
+  * Fix small issues in sessionclean script (Courtesy of Martijn Grendelman)
+    + PHP-FPM binary is named php-fpm@VERSION@
+    + Fix too much escaping when touching session files
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 26 Sep 2016 13:30:43 +0200
+
 php-defaults (44) unstable; urgency=medium
 
   * Don't lose status from check_mod() (Closes: #834189)
