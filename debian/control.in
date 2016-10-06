@@ -5,9 +5,9 @@ Maintainer: Debian PHP Maintainers <pkg-php-maint@lists.alioth.debian.org>
 Uploaders: Ondřej Surý <ondrej@debian.org>,
            Thijs Kinkhorst <thijs@debian.org>,
            Lior Kaplan <kaplan@debian.org>
-Standards-Version: 3.9.7
+Standards-Version: 3.9.8
 Build-Depends: debhelper (>= 9)
-Vcs-Browser: http://anonscm.debian.org/?p=pkg-php/php-defaults.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-php/php-defaults.git
 Vcs-Git: git://anonscm.debian.org/pkg-php/php-defaults.git
 
 Package: libapache2-mod-php
