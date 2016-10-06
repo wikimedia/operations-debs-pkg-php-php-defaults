@@ -7,7 +7,7 @@ Uploaders: Ondřej Surý <ondrej@debian.org>,
            Lior Kaplan <kaplan@debian.org>
 Standards-Version: 3.9.8
 Build-Depends: debhelper (>= 9)
-Vcs-Browser: https://anonscm.debian.org/git/pkg-php/php-defaults.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-php/php-defaults.git
 Vcs-Git: git://anonscm.debian.org/pkg-php/php-defaults.git
 
 Package: libapache2-mod-php
