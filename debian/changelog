@@ -1,3 +1,13 @@
+php-defaults (46) unstable; urgency=medium
+
+  [ Ondřej Surý ]
+  * Update d/control.in with new policy version and https
+
+  [ Thijs Kinkhorst ]
+  * Remove self from uploaders.
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 07 Nov 2016 10:47:32 +0100
+
 php-defaults (45) unstable; urgency=medium
 
   * Fix small issues in sessionclean script (Courtesy of Martijn Grendelman)
