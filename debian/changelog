@@ -1,3 +1,9 @@
+php-defaults (47) unstable; urgency=medium
+
+  * Allow relaxed ; priority=<num> parsing
+
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 14 Dec 2016 13:56:31 +0100
+
 php-defaults (46) unstable; urgency=medium
 
   [ Ondřej Surý ]
