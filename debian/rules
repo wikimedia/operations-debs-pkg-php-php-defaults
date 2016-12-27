@@ -32,7 +32,7 @@ ifeq (Ubuntu,$(DEB_VENDOR))
 endif
 
 %:
-	dh $@
+	dh $@ --with systemd
 
 override_dh_auto_configure:
 	:
@@ -85,5 +85,12 @@ override_dh_gencontrol:
 	dh_gencontrol -pphp-common  -- -v$(PHP_COMMON_DEB_VERSION)
 	dh_gencontrol -pphp-all-dev -- -v$(PHP_COMMON_DEB_VERSION)
 	dh_gencontrol --remaining-packages -- -v$(PHP_DEB_VERSION)
+
+override_dh_systemd_enable:
+	dh_systemd_enable --package=php-common phpsessionclean.timer
+
+override_dh_systemd_start:
+	dh_systemd_start --package=php-common phpsessionclean.timer
+	dh_systemd_start --package=php-common --no-start phpsessionclean.service
 
 .PHONY: debian/control
