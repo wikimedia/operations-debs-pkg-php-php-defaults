@@ -1,3 +1,15 @@
+php-defaults (48) unstable; urgency=medium
+
+  [ Daniel Schaal ]
+  * Add support for systemd timers for phpsessionclean
+
+  [ Ondřej Surý ]
+  * Remove extra diversion for Ubuntu Wily (no longer supported)
+  * Build without systemd support on Ubuntu 12.04 LTS
+  * Move systemd units to main directory, it's a native package after all
+
+ -- Ondřej Surý <ondrej@debian.org>  Sat, 31 Dec 2016 14:57:06 +0100
+
 php-defaults (47) unstable; urgency=medium
 
   * Allow relaxed ; priority=<num> parsing
