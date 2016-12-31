@@ -2,6 +2,6 @@ php-helper /usr/lib/php/
 php-maintscript-helper /usr/lib/php/
 phpenmod /usr/sbin/
 phpquery /usr/sbin/
+phpsessionclean.service /lib/systemd/system/
+phpsessionclean.timer /lib/systemd/system/
 sessionclean /usr/lib/php/
-debian/phpsessionclean.timer /lib/systemd/system/
-debian/phpsessionclean.service /lib/systemd/system/
