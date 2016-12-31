@@ -24,8 +24,22 @@ SED=sed
 
 export DH_OPTIONS
 
+DH_SYSTEMD := --with systemd
+
+# Disable systemd on non-Linux buildds
+ifneq (linux,$(DEB_HOST_ARCH_OS))
+  DH_SYSTEMD :=
+endif
+
+# Disable systemd on Ubuntu 12.04 LTS
+ifeq (Ubuntu,$(DEB_VENDOR))
+  ifeq (precise,$(DEB_DISTRIBUTION))
+    DH_SYSTEMD      :=
+  endif
+endif
+
 %:
-	dh $@ --with systemd
+	dh $@ $(DH_SYSTEMD)
 
 override_dh_auto_configure:
 	:
