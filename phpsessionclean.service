@@ -7,5 +7,4 @@ ExecStart=/usr/lib/php/sessionclean
 ProtectHome=true
 ProtectSystem=true
 PrivateTmp=true
-PrivateDevices=true
 PrivateNetwork=true
