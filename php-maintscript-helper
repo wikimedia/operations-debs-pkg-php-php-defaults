@@ -247,7 +247,7 @@ php_invoke()
 			# b) it's a fresh install
 			PHP_NEED_ACTION=1
  			php$CMD -m -v "$version" -s "$sapi" -q "$MOD" > /dev/null 2>&1 || return 1
-			php_msg "info" "php_invoke: Enable module $MOD for $sapi sapi"
+			php_msg "info" "php_invoke: Enabled module $MOD for $sapi sapi"
 		    fi
 		    ;;
 		dismod)
