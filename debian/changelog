@@ -1,3 +1,10 @@
+php-defaults (51) unstable; urgency=medium
+
+  * Add lintian-override for missing-build-dependency-for-dh_-command
+  * Fix typo when enabling PHP extension (Closes: #855844)
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 03 Mar 2017 10:28:39 +0100
+
 php-defaults (50) unstable; urgency=medium
 
   * Fix priority-parsing when previous lines contain numbers
