@@ -1,3 +1,17 @@
+php-defaults (51~bpo8+1+wmf1) jessie-wikimedia; urgency=medium
+
+  [ Ondřej Surý ]
+  * Create a coinst branch supporting PHP 5.6, 7.0, 7.1 (the default) and
+    clarify that it depends on "latest stable PHP version"
+
+  [ Antoine Musso ]
+  * Rebuild for Jessie + PHP 5.5
+  * Add .gitreview for operations/debs/pkg-php/php-defaults.git
+  * Switch gbp branch to debian/jessie-wikimedia
+  * Default to PHP 5.5
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 30 Aug 2017 15:45:19 +0200
+
 php-defaults (51) unstable; urgency=medium
 
   * Add lintian-override for missing-build-dependency-for-dh_-command
